@@ -1,0 +1,1 @@
+<?php include sfConfig::get('sf_symfony_lib_dir').'/exception/data/exception.php' ?>

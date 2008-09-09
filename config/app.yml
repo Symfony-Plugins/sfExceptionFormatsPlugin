@@ -1,0 +1,3 @@
+# all:
+#   sf_exception_formats_plugin:
+#     templates_dir: ~
