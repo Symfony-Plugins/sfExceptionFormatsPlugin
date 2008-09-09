@@ -1,0 +1,22 @@
+The `sfExceptionFormatsPlugin` extends symfony 1.1's integration of multiple request formats to include exception and error 500 pages.
+
+For example, if a request that includes a `sf_method` parameter with the value of `xml` throws an exception, the plugin will output the following response:
+
+    [xml]
+    <?xml version="1.0" encoding="UTF-8"?>
+    <error code="500" message="Internal Server Error"/>
+
+Very little information is betrayed here. If you request the same URL using a debug controller, you will see a bit more:
+
+    [xml]
+    <?xml version="1.0" encoding="UTF-8"?>
+    <error code="500" message="Internal Server Error">
+      <debug exception="sfException" message="Something unexpected happened" />
+    </error>
+
+Customizing the error responses
+===============================
+
+You can easily customize how exceptions for each format are rendered by adding a template file to your project or application's config directory. For example, placing a `exception.json.php` file in `/config` will customize how JSON exceptions are rendered when debug mode is on. An `error_500.json.php` file in the same directory would render when debug mode is off.
+
+The offending exception object is available in all custom templates as `$exception`.

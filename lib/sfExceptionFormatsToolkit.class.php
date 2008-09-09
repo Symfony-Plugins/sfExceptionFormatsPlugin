@@ -16,8 +16,6 @@ class sfExceptionFormatsToolkit
    * @param   sfEvent $event
    * 
    * @return  boolean
-   * 
-   * @see     sfException::outputStackTrace()
    */
   static public function listenForThrowException(sfEvent $event)
   {
